@@ -1,17 +1,31 @@
 <table class="table">
     <thead class="thead-light">
-    <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Gender</th>
-        <th>Address</th>
-    </tr>
+        <tr>
+        <th>Name
+            <a ng-click="sortDown('name')" class="fas fa-sort-down"></a>
+            <a ng-click="sortUp('name')" class="fas fa-sort-up"></a>
+        </th>
+        <th>Age
+            <a ng-click="sortDown('age')" class="fas fa-sort-down"></a>
+            <a ng-click="sortUp('age')" class="fas fa-sort-up"></a>
+        </th>
+        <th>Gender
+            <a ng-click="sortDown('gender')" class="fas fa-sort-down"></a>
+            <a ng-click="sortUp('gender')" class="fas fa-sort-up"></a>
+        </th>
+        <th>Address
+            <a ng-click="sortDown('address')" class="fas fa-sort-down"></a>
+            <a ng-click="sortUp('address')" class="fas fa-sort-up"></a>
+        </th>
+        </tr>
     </thead>
+    <tbody>
+        <tr ng-repeat="student in $ctrl.students | orderBy:sortType:sortRevert">
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.address}}</td>
+        </tr>
+    </tbody>
 
-    <tr ng-repeat="student in $ctrl.students">
-        <td>{{student.name}}</td>
-        <td>{{student.age}}</td>
-        <td>{{student.gender}}</td>
-        <td>{{student.address}}</td>
-    </tr>
 </table>

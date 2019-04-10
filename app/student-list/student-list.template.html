@@ -1,0 +1,17 @@
+<table class="table">
+    <thead class="thead-light">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Address</th>
+    </tr>
+    </thead>
+
+    <tr ng-repeat="student in $ctrl.students">
+        <td>{{student.name}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.gender}}</td>
+        <td>{{student.address}}</td>
+    </tr>
+</table>

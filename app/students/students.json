@@ -1,0 +1,20 @@
+[
+  {
+    "name": "phuc",
+    "age": 24,
+    "address": "Ha noi",
+    "gender": "male"
+  },
+  {
+    "name": "binh",
+    "age": 23,
+    "address": "Hai duong",
+    "gender": "male"
+  },
+  {
+    "name": "Mai",
+    "age": 19,
+    "address": "Hai phong",
+    "gender": "female"
+  }
+]

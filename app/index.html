@@ -65,7 +65,7 @@
             var nodeWidth = (d) => d.getBBox().width;
 
 
-            const cScale = d3.scaleOrdinal(d3.schemeCategory20b);
+            const cScale = d3.scaleOrdinal().range(["#65C400" , "#2290EE" , "#FFC096", "#5e5e5e"]);
 
             const arc = d3.arc()
                 .outerRadius(r)
@@ -145,6 +145,7 @@
             {label: 'Hai duong', value: 40},
             {label: 'Ha noi', value: 20},
             {label: 'Sai gon', value: 20}
+
         ]
 
     });

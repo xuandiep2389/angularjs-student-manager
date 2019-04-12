@@ -11,15 +11,15 @@ angular.module('studentList')
 
             $scope.sortRevert = false;
 
-            $scope.sortDown = function(keyname) {
-                $scope.sortRevert = false;
+            $scope.sort = function(keyname) {
+                $scope.sortRevert = !$scope.sortRevert;
                 $scope.sortType = keyname;
             };
 
-            $scope.sortUp = function(keyname) {
-                $scope.sortRevert = true;
-                $scope.sortType = keyname;
-            };
+            // $scope.sortUp = function(keyname) {
+            //     $scope.sortRevert = true;
+            //     $scope.sortType = keyname;
+            // };
 
             $http.get('students/students.json').then(function (response) {
                 self.students = response.data;

@@ -1,3 +1,58 @@
+<div style="font-size: 18px; border-bottom: 1px solid #D9D9D9">
+    <span class="dot"></span>
+
+    Student List
+
+    <!-- Button to Open the Modal -->
+    <a data-toggle="modal" data-target="#myModal">
+        Table configuration
+    </a>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Displayed columns</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div style="font-size: 20px; border-bottom: 1px solid #D9D9D9">
+                        <input type="checkbox" ng-model="toggle" ng-change="toggleCheck()">All
+                    </div>
+                    <div style="font-size: 20px; border-bottom: 1px solid #D9D9D9">
+                        <input type="checkbox" ng-model="name">name
+                    </div>
+                    <div style="font-size: 20px; border-bottom: 1px solid #D9D9D9">
+                        <input type="checkbox" ng-model="age">age
+                    </div>
+                    <div style="font-size: 20px; border-bottom: 1px solid #D9D9D9">
+                        <input type="checkbox" ng-model="gender">gender
+                    </div>
+                    <div style="font-size: 20px; border-bottom: 1px solid #D9D9D9">
+                        <input type="checkbox" ng-model="address">address
+                    </div>
+                    <div style="font-size: 20px; border-bottom: 1px solid #D9D9D9">
+                        <input type="checkbox" ng-model="phoneNum">phone num
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
 <table class="table">
     <tr class="table-header">
         <td ng-if="name">Name
@@ -18,7 +73,7 @@
     </tr>
 
     <tbody>
-        <tr ng-repeat="student in $ctrl.students | orderBy:sortType:sortRevert">
+        <tr class="table-body" ng-repeat="student in $ctrl.students | orderBy:sortType:sortRevert">
             <td ng-if="name">{{student.name}}</td>
             <td ng-if="age">{{student.age}}</td>
             <td ng-if="gender">{{student.gender}}</td>
@@ -30,9 +85,3 @@
 
 
 </table>
-<input type="checkbox" ng-model="name">name
-<input type="checkbox" ng-model="age">age
-<input type="checkbox" ng-model="gender">gender
-<input type="checkbox" ng-model="address">address
-<input type="checkbox" ng-model="phoneNum">phone num
-<input type="checkbox" ng-model="toggle" ng-change="toggleCheck()">all

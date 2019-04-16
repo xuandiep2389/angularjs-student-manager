@@ -32,6 +32,6 @@
   display: inline-block;
 }
 
-tbody tr:nth-child(odd) {
+.table-body:nth-child(odd) {
   background-color: #e7fff6
 }

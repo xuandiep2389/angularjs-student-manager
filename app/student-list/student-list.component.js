@@ -33,7 +33,7 @@ angular.module('studentList')
             $scope.phoneNum = false;
 
             $scope.checkAll = true;
-
+            
             $scope.check = function () {
                 if ($scope.checkAll) {
                     $scope.name = true;
@@ -49,6 +49,19 @@ angular.module('studentList')
                     $scope.phoneNum = false;
                 }
             }
+            
+            var init = function () {
+                if ($scope.checkAll) {
+                    $scope.name = true;
+                    $scope.age = true;
+                    $scope.gender = true;
+                    $scope.address = true;
+                    $scope.phoneNum = true;
+                }
+            }
+
+            init();
+
 
         }]
     });

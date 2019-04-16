@@ -1,27 +1,39 @@
 <table class="table">
     <thead class="thead-light">
-        <tr>
-        <th>Name
+    <tr>
+        <th ng-if="name">Name
             <a ng-click="sort('name')" class="fas fa-sort"></a>
         </th>
-        <th>Age
+        <th ng-if="age">Age
             <a ng-click="sort('age')" class="fas fa-sort"></a>
         </th>
-        <th>Gender
+        <th ng-if="gender">Gender
             <a ng-click="sort('gender')" class="fas fa-sort"></a>
         </th>
-        <th>Address
+        <th ng-if="address">Address
             <a ng-click="sort('address')" class="fas fa-sort"></a>
         </th>
-        </tr>
+        <th ng-if="phoneNum">Phone Number
+            <a ng-click="sort('phoneNum')" class="fas fa-sort"></a>
+        </th>
+    </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="student in $ctrl.students | orderBy:sortType:sortRevert">
-            <td>{{student.name}}</td>
-            <td>{{student.age}}</td>
-            <td>{{student.gender}}</td>
-            <td>{{student.address}}</td>
-        </tr>
+    <tr ng-repeat="student in $ctrl.students | orderBy:sortType:sortRevert">
+        <td ng-if="name">{{student.name}}</td>
+        <td ng-if="age">{{student.age}}</td>
+        <td ng-if="gender">{{student.gender}}</td>
+        <td ng-if="address">{{student.address}}</td>
+        <td ng-if="phoneNum">{{student.phoneNum}}
+
+    </tr>
     </tbody>
 
 </table>
+
+<input type="checkbox" ng-model="name">name
+<input type="checkbox" ng-model="age">age
+<input type="checkbox" ng-model="gender">gender
+<input type="checkbox" ng-model="address">address
+<input type="checkbox" ng-model="phoneNum">phone num
+<input type="checkbox" ng-model="toggle" ng-change="toggleCheck()" >all

@@ -3,7 +3,8 @@
     "name": "phuc",
     "age": 24,
     "address": "Ha noi",
-    "gender": "male"
+    "gender": "male",
+    "phoneNum": "0123456788"
   },
   {
     "name": "Binh",

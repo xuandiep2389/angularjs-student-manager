@@ -23,3 +23,15 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: lightseagreen;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #e7fff6
+}

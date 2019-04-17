@@ -79,5 +79,7 @@ angular.module('myChart',[])
 
         };
     })
-    .controller('myChartController', ['$scope',function ($scope) {
+    .controller('myChartController', ['$scope','$http',function ($scope, $http) {
+
+
     }]);

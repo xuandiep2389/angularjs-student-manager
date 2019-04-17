@@ -43,7 +43,7 @@
             <div>
                 <div style="font-size: 20px; border-bottom: 1px solid #D9D9D9">
                     Visualization
-                    <button ng-click="toggleShowGraph()">Hide</button>
+                    <button class="far fa-minus-square" ng-click="toggleShowGraph()"></button>
                 </div>
 
                 <div>
@@ -53,12 +53,19 @@
             </div>
         </div>
 
-        <div class="col-md-1" ng-show="!showGraph">
-            <button ng-click="toggleShowGraph()">Show Graph</button>
+        <div class="col-1" ng-show="!showGraph">
 
+            <div>
+                <button class="far fa-plus-square" ng-click="toggleShowGraph()">
+
+                </button>
+            </div>
+            <div id="vertical-para">
+                <p id="para">CHART</p>
+            </div>
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md">
 
             <student-list></student-list>
 

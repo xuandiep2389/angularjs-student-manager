@@ -80,5 +80,4 @@ angular.module('myChart',[])
         };
     })
     .controller('myChartController', ['$scope',function ($scope) {
-
     }]);

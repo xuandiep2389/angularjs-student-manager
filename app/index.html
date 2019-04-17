@@ -17,14 +17,19 @@
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
     <link rel="stylesheet" href="app.css">
     <script src="lib/angular/angular.js"></script>
+
     <script src="app.module.js"></script>
+    <script src="my-chart/my-chart.module.js"></script>
+    <script src="my-chart/my-chart.component.js"></script>
     <script src="student-list/student-list.module.js"></script>
     <script src="student-list/student-list.component.js"></script>
 </head>
@@ -39,99 +44,23 @@
                 <div style="font-size: 20px; border-bottom: 1px solid #D9D9D9">
                     Visualization
                 </div>
-                <div id="my_graph"></div>
-            </div>
 
+                <div>
+                    <my-donut-chart></my-donut-chart>
+                </div>
+
+            </div>
         </div>
 
 
         <div class="col-md-8">
 
-                <student-list></student-list>
+            <student-list></student-list>
 
         </div>
     </div>
 
-
 </div>
 
-
-<script>
-    // Create the chart
-    chart = new Highcharts.Chart({
-        chart: {
-            renderTo: 'my_graph',
-            type: 'pie'
-        },
-        title: {
-            text: 5 + '<br>' + 'students',
-            align: 'center',
-            verticalAlign: 'middle',
-            y: -30
-        },
-        yAxis: {
-            title: {
-                text: 'Total percent market share'
-            }
-        },
-        plotOptions: {
-            pie: {
-                shadow: false,
-                point: {
-                    events: {
-                        mouseOver: function (e) {
-                            this.originalRadius = this.graphic.r;
-                            this.graphic.animate({
-                                r: this.originalRadius * 1.07
-                            }, 200);
-                        },
-                        mouseOut: function (e) {
-                            this.graphic.animate({
-                                r: this.originalRadius
-                            }, 200);
-                        }
-                    }
-                }
-            }
-        },
-        tooltip: {
-            formatter: function () {
-                return '<b>' + this.point.name + '</b>: ' + this.y + ' %';
-            }
-        },
-        series: [{
-            name: 'Data',
-            data: [
-                ["Hai phong", 20],
-                ["Hai duong", 40],
-                ["Sai gon", 20],
-                ["Ha noi", 20]
-            ],
-            size: '100%',
-            innerSize: '70%',
-            showInLegend: true,
-            dataLabels: {
-                enabled: false
-            },
-            states: {
-                hover: {
-                    halo: false
-                }
-            },
-        }]
-    });
-
-    var circleradius = chart;
-    console.log(chart);
-
-    var test = chart.options.series[0].innerSize * chart.Height
-    console.log(test);
-
-    // Render the circle
-    chart.renderer.circle('50%', '50%', 130).attr({
-        fill: '#fff',
-    }).add();
-
-</script>
 </body>
 </html>
